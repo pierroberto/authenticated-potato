@@ -1,9 +1,10 @@
 import { Resolvers } from "./generated/graphql";
+import { UserModel } from "./models/User";
 
 export const resolvers: Resolvers = {
   Query: {
-    // user(parent, args, context, info) {
-    //   return [];
-    // },
+    async user(parent, args, context, info) {
+      return await UserModel.findById(args.id);
+    },
   },
 };
