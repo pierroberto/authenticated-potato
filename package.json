@@ -6,8 +6,8 @@
   "scripts": {
     "build": "npx tsc",
     "start": "node dist/index.js",
-    "dev": "nodemon server/index.ts",
-    "gen": "graphql-codegen --config codegen.yml"
+    "dev": "concurrently \"nodemon server/index.ts\" \"npm run generate --watch\"",
+    "generate": "graphql-codegen --config codegen.yml"
   },
   "repository": {
     "type": "git",
@@ -21,11 +21,12 @@
   "homepage": "https://github.com/pierroberto/authenticated-potato#readme",
   "dependencies": {
     "apollo-server": "^3.10.2",
+    "concurrently": "^7.4.0",
     "dotenv": "^16.0.2",
     "graphql": "^16.6.0"
   },
   "devDependencies": {
-    "@graphql-codegen/cli": "2.12.0",
+    "@graphql-codegen/cli": "2.12.1",
     "@graphql-codegen/introspection": "2.2.1",
     "@graphql-codegen/typescript": "2.7.3",
     "@graphql-codegen/typescript-resolvers": "2.7.3",

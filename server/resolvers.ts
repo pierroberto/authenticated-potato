@@ -1,20 +1,9 @@
-const users = [
-  {
-    id: "1",
-    name: "Elizabeth Bennet",
-  },
-  {
-    id: "2",
-    name: "Fitzwilliam Darcy",
-  },
-];
+import { Resolvers } from "./generated/graphql";
 
-const resolvers = {
+export const resolvers: Resolvers = {
   Query: {
-    user(parent, args, context, info) {
-      return users.find((user) => user.id === args.id);
-    },
+    // user(parent, args, context, info) {
+    //   return [];
+    // },
   },
 };
-
-export default resolvers;

@@ -1,15 +1,22 @@
-import dotenv from "dotenv";
-import express, { Express, Request, Response } from "express";
+import { ApolloServer } from "apollo-server";
+import { readFileSync } from "node:fs";
+import { resolvers } from "./resolvers";
 
-dotenv.config();
+const users = [
+  {
+    id: "1",
+    name: "Elizabeth Bennet",
+  },
+  {
+    id: "2",
+    name: "Fitzwilliam Darcy",
+  },
+];
 
-const app: Express = express();
-const port = process.env.PORT;
+const typeDefs = readFileSync("./server/schema/schema.graphql", "utf8");
 
-app.get("/", (req: Request, res: Response) => {
-  res.send("Express + TypeScript Server");
-});
+const server = new ApolloServer({ typeDefs, resolvers });
 
-app.listen(port, () => {
-  console.log(`⚡️[erver]: Server is running at https://localhost:${port}`);
+server.listen().then(({ url }) => {
+  console.log(`⚡️[Server]: Server is running at ${url}`);
 });
