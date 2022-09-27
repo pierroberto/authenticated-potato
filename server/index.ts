@@ -6,17 +6,6 @@ import { resolvers } from "./resolvers";
 
 dotenv.config();
 
-const users = [
-  {
-    id: "1",
-    name: "Elizabeth Bennet",
-  },
-  {
-    id: "2",
-    name: "Fitzwilliam Darcy",
-  },
-];
-
 const MONGO_URL = `mongodb+srv://${process.env.MONGO_USERNAME}:${process.env.MONGO_PASSWORD}@cluster1.btwswt7.mongodb.net/?retryWrites=true&w=majority`;
 
 const typeDefs = readFileSync("./server/schema/schema.graphql", "utf8");
