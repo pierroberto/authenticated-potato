@@ -8,11 +8,7 @@ const tryLogin = () => {
 
   if (maybeUsername === null || maybePassword === null) return;
 
-  const baseUrl = process.env.BASE_URL;
-
-  if (baseUrl === undefined) {
-    throw new Error("no env found");
-  }
+  const baseUrl = process.env.BASE_URL || window.location.href;
 
   fetch(`${baseUrl}/graphql`, {
     method: "POST",
