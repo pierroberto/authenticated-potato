@@ -28,6 +28,7 @@ jobs:
           npm run build
           cp client/index.html dist/client/index.html
   heroku:
+    needs: build
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
