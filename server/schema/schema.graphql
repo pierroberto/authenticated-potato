@@ -5,7 +5,7 @@ type User {
 }
 
 type Query {
-  user(username: String!): User
+  user(username: String!, password: String!): User
 }
 
 schema {
