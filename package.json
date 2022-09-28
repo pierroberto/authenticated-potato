@@ -5,7 +5,6 @@
   "main": "server/index.ts",
   "scripts": {
     "build": "npx tsc",
-    "start": "node dist/index.js",
     "dev": "concurrently \"nodemon server/index.ts\" \"npm run generate -- --watch\"",
     "generate": "graphql-codegen --config codegen.yml",
     "test": "jest",
