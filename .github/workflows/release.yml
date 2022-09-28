@@ -27,5 +27,12 @@ jobs:
           npm ci
           npm run build
           cp client/index.html dist/client/index.html
-          cd dist/client
-          ls -a
+  heroku:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: akhileshns/heroku-deploy@v3.12.12
+        with:
+          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+          heroku_app_name: "authenticated-potato"
+          heroku_email: "pierroberto.lucisano@gmail.com"
