@@ -4,12 +4,19 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <link rel="stylesheet" href="main.css" />
-    <script src="dist/main.js"></script>
+    <script src="dist/client/main.js"></script>
     <title>Login</title>
   </head>
   <body>
     <div id="app">
-      <div style="margin: auto">
+      <div
+        style="
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          margin-top: 20%;
+        "
+      >
         <div style="margin-bottom: 20px">
           <label>Username:</label>
           <input id="username" name="username" />
@@ -19,7 +26,9 @@
           <input id="password" name="password" />
         </div>
         <div>
-          <button id="login">Login</button>
+          <button id="login" style="padding: 10px 50px; cursor: pointer">
+            Login
+          </button>
         </div>
       </div>
     </div>
