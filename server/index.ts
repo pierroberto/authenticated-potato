@@ -13,7 +13,7 @@ const typeDefs = readFileSync("./server/schema/schema.graphql", "utf8");
 const server = new ApolloServer({ typeDefs, resolvers });
 
 mongoose
-  .connect(MONGO_URL)
+  .connect(MONGO_URL, { dbName: "session" })
   .then(() => {
     console.log("⚡️[MongoDB]: MongoDB is connected");
     return server.listen();
