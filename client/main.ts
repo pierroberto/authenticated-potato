@@ -1,3 +1,7 @@
+import * as dotenv from "dotenv";
+
+dotenv.config();
+
 const tryLogin = () => {
   const maybeUsername = document.getElementById("username");
   const maybePassword = document.getElementById("password");
@@ -12,8 +16,25 @@ const tryLogin = () => {
 
   fetch(`${baseUrl}/graphql`, {
     method: "POST",
-    body: "{ user: { username } }",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      query: `{ 
+        user: { username } 
+      }`,
+    }),
   })
     .then((response) => response.json())
     .then((response) => response);
 };
+
+document.addEventListener("DOMContentLoaded", function () {
+  const button = document.getElementById("login");
+
+  if (button !== null) {
+    button.addEventListener("click", () => {
+      tryLogin();
+    });
+  }
+});
