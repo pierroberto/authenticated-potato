@@ -1,3 +1,4 @@
+# Authenticated Potato
 ![Workflow](https://github.com/pierroberto/authenticated-potato/actions/workflows/release.yml/badge.svg
 )
 
@@ -7,3 +8,6 @@ Just an authenticated potato.
 <p align="center">
 <img src="./potato.png" width="150px" height="auto"/>
 </p>
+
+## Get started
+- Run `npm run install`.
