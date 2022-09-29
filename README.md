@@ -1,3 +1,6 @@
+![Workflow](https://github.com/pierroberto/authenticated-potato/actions/workflows/release.yml/badge.svg
+)
+
 <p align="center">
 Just an authenticated potato.
 </p>
