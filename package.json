@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "server/index.ts",
+  "engines": {
+    "node": "16.14.2"
+  },
   "scripts": {
     "build": "npx tsc",
     "dev": "concurrently \"nodemon server/index.ts\" \"npm run generate -- --watch\"",
