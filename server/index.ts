@@ -26,9 +26,10 @@ async function startApolloServer(typeDefs: string, resolvers: Resolvers) {
   const app = express();
   const httpServer = http.createServer(app);
 
-  app.get("/", (req, res) =>
-    res.sendFile(path.join(__dirname, "..", "client", "index.html"))
-  );
+  app.get("/", (req, res) => {
+    console.log("Current location: ", __dirname);
+    return res.sendFile(path.join(__dirname, "..", "client", "index.html"));
+  });
 
   const server = new ApolloServer({
     typeDefs,
