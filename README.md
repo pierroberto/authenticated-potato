@@ -11,3 +11,4 @@ Just an authenticated potato.
 
 ## Get started
 - Run `npm run install`.
+- Run `npm run dev`.
