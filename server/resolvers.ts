@@ -1,5 +1,5 @@
-import { Resolvers } from "./generated/graphql";
-import { UserModel } from "./models/User";
+import { Resolvers } from './generated/graphql'
+import { UserModel } from './models/User'
 
 export const resolvers: Resolvers = {
   Query: {
@@ -7,7 +7,7 @@ export const resolvers: Resolvers = {
       return await UserModel.findOne({
         username,
         password,
-      });
+      })
     },
   },
-};
+}
