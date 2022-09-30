@@ -26,7 +26,7 @@ async function startApolloServer(typeDefs: string, resolvers: Resolvers) {
   const app = express()
   const httpServer = http.createServer(app)
 
-  app.use('/', express.static(path.join(__dirname, '..', 'client')))
+  app.use('/static', express.static(path.join(__dirname, '..', 'client')))
 
   const server = new ApolloServer({
     typeDefs,
