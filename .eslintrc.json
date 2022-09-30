@@ -1,0 +1,17 @@
+{
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  },
+  "rules": {
+    "@typescript-eslint/no-shadow": "off",
+    "no-nested-ternary": "off",
+    "import/order": [
+      "error",
+      {
+        "alphabetize": { "caseInsensitive": true },
+        "groups": ["builtin", "external", "index", "parent", "sibling"]
+      }
+    ],
+    "no-shadow": "off"
+  }
+}
