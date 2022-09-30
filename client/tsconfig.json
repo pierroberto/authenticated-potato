@@ -1,0 +1,10 @@
+{
+  "extends": "../tsconfig.json",
+  "exclude": ["../server/**/*"],
+  "include": ["./main.ts"],
+  "compilerOptions": {
+    "outDir": "../dist/client",
+    "moduleResolution": "node",
+    "module": "es2015"
+  }
+}
