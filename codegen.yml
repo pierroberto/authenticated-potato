@@ -1,11 +1,17 @@
 overwrite: true
-schema: "./server/schema/schema.graphql"
+schema: './server/schema/schema.graphql'
 documents: null
 generates:
   ./server/generated/graphql.ts:
+    hooks:
+      afterOneFileWrite:
+        - prettier --write
     plugins:
-      - "typescript"
-      - "typescript-resolvers"
+      - 'typescript'
+      - 'typescript-resolvers'
   ./server/generated/graphql.schema.json:
+    hooks:
+      afterOneFileWrite:
+        - prettier --write
     plugins:
-      - "introspection"
+      - 'introspection'
