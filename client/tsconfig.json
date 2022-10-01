@@ -3,7 +3,7 @@
   "exclude": ["../server/**/*"],
   "include": ["./main.ts"],
   "compilerOptions": {
-    "outDir": "../dist/client",
+    "outDir": "./",
     "moduleResolution": "node",
     "module": "es2015"
   }
