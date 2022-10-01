@@ -1,8 +1,14 @@
-const tryLogin = () => {
-  const maybeUsername = document.getElementById('username')
-  const maybePassword = document.getElementById('password')
+const tryLogin = (e: SubmitEvent) => {
+  console.log(e.target)
+  e.preventDefault()
 
-  if (maybeUsername === null || maybePassword === null) return
+  if (e.target === null) return
+
+  const maybeForm = document.getElementById('login-form') as HTMLFormElement
+  if (maybeForm === null) return
+
+  const username = (maybeForm.elements[0] as HTMLInputElement).value
+  const password = (maybeForm.elements[1] as HTMLInputElement).value
 
   const baseUrl = window.location.href
 
@@ -20,8 +26,8 @@ const tryLogin = () => {
                 }
               `,
       variables: {
-        username: 'admin',
-        password: 'admin',
+        username,
+        password,
       },
     }),
   })
@@ -34,17 +40,14 @@ const submitLoginForm = (event: Event) => {
   event.preventDefault()
 
   if (event.target === null) return
-
-  //console.log(event.target['username'].value)
-  //console.log(event.target['password'].value)
 }
 
 document.addEventListener('DOMContentLoaded', function () {
-  const button = document.getElementById('login')
+  const button = document.getElementById('login-form')
 
   if (button !== null) {
-    button.addEventListener('click', () => {
-      tryLogin()
+    button.addEventListener('submit', (e: SubmitEvent) => {
+      tryLogin(e)
     })
   }
 })
