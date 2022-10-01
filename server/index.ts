@@ -1,10 +1,9 @@
-import * as dotenv from 'dotenv'
-dotenv.config()
 import {
   ApolloServerPluginDrainHttpServer,
   ApolloServerPluginLandingPageLocalDefault,
 } from 'apollo-server-core'
 import { ApolloServer } from 'apollo-server-express'
+import * as dotenv from 'dotenv'
 import express from 'express'
 import http from 'http'
 import mongoose from 'mongoose'
@@ -12,6 +11,7 @@ import { readFileSync } from 'node:fs'
 import path from 'path'
 import { Resolvers } from './generated/graphql'
 import { resolvers } from './resolvers'
+dotenv.config()
 
 const MONGO_URL = `mongodb+srv://${process.env.MONGO_USERNAME}:${process.env.MONGO_PASSWORD}@cluster1.btwswt7.mongodb.net/?retryWrites=true&w=majority`
 
@@ -25,7 +25,7 @@ async function startApolloServer(typeDefs: string, resolvers: Resolvers) {
   const app = express()
   const httpServer = http.createServer(app)
 
-  app.use('/', express.static(path.join(__dirname, '..', 'client')))
+  app.use('/', express.static(path.join(__dirname, 'client')))
 
   const server = new ApolloServer({
     typeDefs,
