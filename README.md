@@ -1,6 +1,6 @@
 # Authenticated Potato
-![Workflow](https://github.com/pierroberto/authenticated-potato/actions/workflows/release.yml/badge.svg
-)
+
+![Workflow](https://github.com/pierroberto/authenticated-potato/actions/workflows/release.yml/badge.svg)
 
 <p align="center">
 Just an authenticated potato.
@@ -10,10 +10,13 @@ Just an authenticated potato.
 </p>
 
 ## Get started
+
 - Run `npm run install`.
-- Run `npm run dev`.
+- Run `npm run dev-server` to run backend in watch mode.
+- Run `npm run dev-client` to run frontend in watch mode.
 
 ## Dedication
+
 <p align="center">Potatoes, potatoes! They grow in the ground,</p>
 
 <p align="center">When you dig them up they're muddy, brown and round,</p>
