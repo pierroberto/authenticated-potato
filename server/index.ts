@@ -11,6 +11,7 @@ import { readFileSync } from 'node:fs'
 import path from 'path'
 import { Resolvers } from './generated/graphql'
 import { resolvers } from './resolvers'
+
 dotenv.config()
 
 const MONGO_URL = `mongodb+srv://${process.env.MONGO_USERNAME}:${process.env.MONGO_PASSWORD}@cluster1.btwswt7.mongodb.net/?retryWrites=true&w=majority`

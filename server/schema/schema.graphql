@@ -2,6 +2,7 @@ type User {
   id: ID!
   username: String!
   password: String!
+  token: String
 }
 
 type Query {

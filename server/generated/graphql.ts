@@ -36,6 +36,7 @@ export type User = {
   __typename?: 'User'
   id: Scalars['ID']
   password: Scalars['String']
+  token?: Maybe<Scalars['String']>
   username: Scalars['String']
 }
 
@@ -180,6 +181,7 @@ export type UserResolvers<
 > = {
   id?: Resolver<ResolversTypes['ID'], ParentType, ContextType>
   password?: Resolver<ResolversTypes['String'], ParentType, ContextType>
+  token?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>
   username?: Resolver<ResolversTypes['String'], ParentType, ContextType>
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>
 }
