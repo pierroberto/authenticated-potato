@@ -1,5 +1,4 @@
 const tryLogin = (e: SubmitEvent) => {
-  console.log(e.target)
   e.preventDefault()
 
   if (e.target === null) return
@@ -36,7 +35,6 @@ const tryLogin = (e: SubmitEvent) => {
 }
 
 const submitLoginForm = (event: Event) => {
-  console.log(event)
   event.preventDefault()
 
   if (event.target === null) return
